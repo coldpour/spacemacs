@@ -75,3 +75,11 @@
       (insert "* ")
       (setq end (+ end 2))
       (forward-line))))
+
+(defun coldpour/add-debugger ()
+  (interactive)
+  (beginning-of-line)
+  (insert "debugger // eslint-disable-line"))
+
+(global-set-key "\C-cd" 'coldpour/add-debugger)
+(global-set-key "\C-cs" 'sort-lines)
