@@ -79,7 +79,12 @@
 (defun coldpour/add-debugger ()
   (interactive)
   (beginning-of-line)
-  (insert "debugger // eslint-disable-line"))
+  (insert (if use-hard-newlines hard-newline "\n"))
+  (forward-line -1)
+  (back-to-indentation)
+  (insert "debugger // eslint-disable-line")
+  (indent-for-tab-command)
+  )
 
 (global-set-key "\C-cd" 'coldpour/add-debugger)
 (global-set-key "\C-cs" 'sort-lines)
