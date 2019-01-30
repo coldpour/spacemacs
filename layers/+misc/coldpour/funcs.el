@@ -88,3 +88,24 @@
 
 (global-set-key "\C-cd" 'coldpour/add-debugger)
 (global-set-key "\C-cs" 'sort-lines)
+
+(defun coldpour/add-style-variables-and-mixins ()
+  (interactive)
+  (beginning-of-line)
+  (insert "@import 'src/scss/base/variables';
+@import 'src/scss/buyers_mixins';
+
+"))
+(global-set-key "\C-cv" 'coldpour/add-style-variables-and-mixins)
+
+(defun coldpour/add-react-imports ()
+  (interactive)
+  (beginning-of-line)
+  (insert "import React from 'react'
+import classnames from 'classnames'
+import PropTypes from 'prop-types'
+
+import styles from './.module.scss'
+
+"))
+(global-set-key "\C-cr" 'coldpour/add-react-imports)
