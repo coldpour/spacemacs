@@ -105,7 +105,29 @@
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 
-import styles from './.module.scss'
+import styles from './Component.module.scss'
 
+const propTypes = {}
+
+const defaultProps = {}
+
+const Component = ({
+  className,
+  ...restProps
+}) => (
+  <div
+    className={
+      classnames(
+        className,
+        styles.root
+      )}
+    {...restProps}
+  />
+)
+
+Component.propTypes = propTypes
+Component.defaultProps = defaultProps
+
+export default Component
 "))
 (global-set-key "\C-cr" 'coldpour/add-react-imports)
